@@ -1,31 +1,110 @@
 {
-    "status do pedido": [
-        "Seu pedido está em processamento.",
-        "Seu pedido foi enviado e está a caminho.",
-        "O status do seu pedido pode ser verificado na sua conta."
+    "pedido_a_caminho": [
+        "Olá! Tudo bem? Seu pedido já está a caminho! Qualquer dúvida com o pacote em rota, o senhor (a) pode entrar em contato com o suporte da Shopee pois eles são responsáveis pelo pedido a partir de agora, obrigado pela compra!! 😊"
     ],
-    "demora com a entrega": [
-        "Desculpe pela demora! Verificamos que seu pedido pode estar em atraso.",
-        "Aguarde mais alguns dias, estamos monitorando a entrega."
+    "pedido_atrasado": [
+        "Olá! Tudo bem? Pedimos desculpas pelo atraso, tivemos um probleminha quanto a coleta da Shopee, mas já estamos em contato com o suporte para resolvermos, pedimos desculpa pelo transtorno. 😉"
     ],
-    "reembolso/cancelamento": [
-        "O cancelamento não é possível neste momento, mas você pode devolver o produto.",
-        "Para solicitar um reembolso, entre em contato com o suporte."
+    "pedido_entregue": [
+        "Olá! Tudo bem? Vimos que seu produto foi entregue, agradecemos a preferência!! 😊"
     ],
-    "extraviado ou veio com defeito": [
-        "Por favor, verifique se o pacote chegou danificado.",
-        "Caso tenha recebido um produto errado, entre em contato conosco."
+    "cancelado_sem_motivo": [
+        "Olá! Tudo bem? A plataforma não informa o motivo, só informa que foi cancelado automaticamente pelo sistema da Shopee. Logo será reembolsado!"
     ],
-    "promoções e cupons": [
-        "Verifique nosso site para as últimas promoções e cupons disponíveis.",
-        "Não deixe de conferir a seção de ofertas especiais!"
+    "data_despacho": [
+        "Olá! Tudo bem? Seu pedido será despachado conforme a data estimada pela Shopee. Obrigado pela compra"
     ],
-    "outras_perguntas": [
-        "Desculpe, não entendi sua pergunta. Pode reformular?",
-        "Por favor, forneça mais detalhes sobre sua dúvida."
+    "aguardando_coleta": [
+        "Olá! Tudo bem? Estamos aguardando a transportadora passar e coletar!"
     ],
-    "agradecimento": [
-        "Agradecemos pelo seu contato!",
-        "Obrigado por nos contatar, estamos aqui para ajudar!"
+    "sem_rastreio": [
+        "Olá! Tudo bem? Infelizmente não temos informações de rastreio dos pedidos a não ser esses que aparecem nos status do pedido, que a Shopee disponibiliza aqui na plataforma, para mais informações detalhadas em relação ao seu pacote entrar em contato com o suporte da Shopee"
+    ],
+    "data_entrega": [
+        "Olá! Tudo bem? Infelizmente não temos informações em relação a data de entrega, para mais informações detalhadas em relação ao seu pacote entrar em contato com o suporte da Shopee"
+    ],
+    "cancelamento": [
+        "Olá! Tudo bem? Não conseguimos efetuar o cancelamento pois a Shopee só nos da como opção colocar como estoque esgotado para efetuar cancelamento, colocando essa opção o estoque de nosso produto irá alterar e irá bagunçar o estoque. Por esse motivo pedimos que verifiquem com o suporte da Shopee para lhe ajudarem a cancelar!"
+    ],
+    "reembolso": [
+        "Olá! Tudo bem? Em relação ao reembolso, ele pode cair em até 2 a 3 dias úteis. Nós não temos acesso a reembolsos ou dinheiro em conta, apenas o sistema da Shopee. Pode entrar em contato com o suporte ao cliente para que eles possam lhe auxiliar melhor!"
+    ],
+    "pedido_extraviado": [
+        "Olá! Tudo bem? Provavelmente o pedido foi danificado ou perdido durante o trajeto, mas fique tranquilo o valor pago pelo pedido lhe será reembolsado."
+    ],
+    "entrega_nao_recebida_1": [
+        "Olá! Tudo bem? O(A) senhor(a) verificou com seus vizinhos? Pode ser que alguém tenha recebido para o(a) senhor(a), isso vem acontecendo com muita frequência, o cliente verifica que está como recebido e está com o vizinho."
+    ],
+    "entrega_nao_recebida_2": [
+        "Olá! Tudo bem? Quando consta como entregue e ainda não recebeu seu pedido a Shopee informa para verificar com seus vizinhos ou aguardar até 42h para receber o pedido, caso após esse tempo de espera não receber, pode estar abrindo solicitação de devolução/reembolso."
+    ],
+    "alteracao_endereco": [
+        "Olá! Tudo bem? Quanto a alteração de endereço não será possível realizar a alteração, somente cancelando este e realizando outro pedido novamente inserindo os dados de endereço correto onde deseja que seu pacote seja entregue."
+    ],
+    "produto_sem_estoque": [
+        "Olá! Tudo bem? Tivemos um erro na plataforma, no sistema continuou constando como se ainda tivéssemos o produto em estoque, porém, já está esgotado, o senhor (a) gostaria de outra cor? Ou outro produto?"
+    ],
+    "demora_resposta_1": [
+        "Olá! Tudo bem? Respondemos conforme a ordem, temos um chat bem congestionado, por isso pedimos que caso tenha dúvida para aguardar, pois muitos enviam diversas mensagens e as mensagens se tornam recentes voltando ao topo!"
+    ],
+    "demora_resposta_2": [
+        "Olá! Tudo bem? Pedimos desculpas por não estar lhe dando a devida atenção que merece, estamos com o chat bem congestionado por problemas na coleta da Shopee, como eles não estão passando em nosso Seller para coletar está atrasando diversos pedidos e prejudicando nossa empresa, estamos recebendo diversas mensagens de questionamento em relação ao despache. Estamos tentando entregar nosso melhor atendimento pedimos por gentileza um pouco de paciência e compreensão! Grata :)"
+    ],
+    "validade_produto": [
+        "Olá! Tudo bem? Devido a alta rotatividade de nossos produtos não conseguimos informar a validade exata, mas fique tranquilo todos os produtos são recém-fabricados e terão um bom tempo de validade. Estamos a disposição!"
+    ],
+    "produto_danificado": [
+        "Olá! Tudo bem? Poderia nos enviar uma imagem do produto que recebeu e do pacote que ele veio? O pacote chegou avariado?"
+    ],
+    "compra_realizada_1": [
+        "Olá! Tudo bem? Que ótimo, estamos ansiosos para preparar seu pedido, aguardamos sua compra!"
+    ],
+    "compra_realizada_2": [
+        "Olá! Tudo bem? Que ótimo agradecemos pela preferência!! 😊"
+    ],
+    "produto_aplicador": [
+        "Olá! Tudo bem? Esse aplicador também é da Vonixx, o produto é referente a uma nova linha profissional deles, também de ótima qualidade!"
+    ],
+    "produto_original": [
+        "Olá! Tudo bem? Sim, todos nossos produtos são originais. Nós somos distribuidores que trabalhamos diretamente com os fabricantes, visamos oferecer produtos de melhores qualidades!"
+    ],
+    "propaganda_produto": [
+        "Olá! Tudo bem? Garanto que não se arrependerá de adquirir o produto, o mesmo é de excelente qualidade. Reforçando também que sempre siga as instruções dadas pelo fabricante desde a aplicação até as precauções para não enfrentar problemas com a aplicação!"
+    ],
+    "pedido_cancelado_shopee": [
+        "Olá! Tudo bem? A plataforma informa que foi cancelado automaticamente pelo sistema da Shopee, por conta dos atrasos de coleta deles, pedimos desculpas pelo ocorrido, caso deseje realizar a compra novamente lhe damos prioridade em relação ao despache"
+    ],
+    "produto_esgotado": [
+        "Olá! Tudo bem? Pedimos desculpas, infelizmente tivemos um erro na plataforma, no sistema continuou constando como se ainda tivéssemos o produto em estoque, porém, já está esgotado. Logo será reembolsado! De qualquer forma agradecemos a preferência!"
+    ],
+    "pacote_avariado_1": [
+        "Olá! Tudo bem? Sempre aconselhamos nossos cliente a se recusar a receber uma caixa violada, pois por descuido do transportador é exatamente isso que acontece, o cliente acaba ficando prejudicado. Indicamos que abra uma solicitação de devolução alegando junto a forma como recebeu a caixa para que assim a Shopee possa lhe ajudar da melhor forma!"
+    ],
+    "pacote_avariado_2": [
+        "Olá! Tudo bem? Quanto à forma que seu produto foi entregue já relatamos diretamente com o suporte da Shopee, pois sempre procuramos preservar os produtos para que cheguem intactos aos clientes e não tenham problemas como esse, porém não temos controle do transporte da Shopee. Pedimos desculpas pelo ocorrido 😔"
+    ],
+    "pacote_avariado_3": [
+        "Olá! Tudo bem? Nossa, iremos relatar essa falta de cuidado do transportador com o suporte da Shopee. Pode realizar a devolução para ter seu reembolso em conta!"
+    ],
+    "troca_pedido": [
+        "Olá! Tudo bem? Infelizmente não conseguimos realizar trocas após o pedido ser realizado pelo controle de estoque e emissão de nota, pode cancelar e realizar novamente com o produto que deseja."
+    ],
+    "solicitar_devolucao": [
+        "Olá! Tudo bem? Pedimos que entre em contato com o suporte para que lhe auxiliem a como efetuar essa solicitação, até mesmo para verificar se não é um erro da plataforma em não estar lhe atribuindo a opção!"
+    ],
+    "frete_caro": [
+        "Olá! Tudo bem? Infelizmente não conseguimos ajudar quanto ao frete, pois é atribuído pela própria plataforma com base no valor do pedido ou sua região. Pedimos que entre em contato com o suporte da Shopee."
+    ],
+    "cancelamento_a_caminho": [
+        "Olá! Tudo bem? Infelizmente não será possível cancelar pois seu pacote já está a caminho. Pode recusar no ato da entrega ou realizar devolução para obter o reembolso!"
+    ],
+    "ajuda_cliente": [
+        "Olá! Tudo bem? Em que podemos lhe ajudar?"
+    ],
+    "variacao_produto": [
+        "Olá! Tudo bem? Será enviado conforme solicitado no ato da compra!"
+    ],
+    "devolucao_reembolso": [
+        "Olá! Tudo bem? Vimos que foi aberta uma solicitação de devolução/reembolso do pedido."
     ]
 }
