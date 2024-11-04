@@ -5,6 +5,7 @@ import random
 import logging
 import os
 import re
+import json  # Importar o módulo JSON
 
 # Configurações da API da Shopee vindas das variáveis de ambiente
 PARTNER_ID = os.getenv("SHOPEE_PARTNER_ID")
@@ -15,31 +16,12 @@ SHOP_ID = os.getenv("SHOPEE_SHOP_ID")
 # Configuração do logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-# Respostas predefinidas
-respostas = {
-    "status do pedido": [
-        "Olá! Seu pedido está a caminho ou está sendo preparado para envio.",
-    ],
-    "demora com a entrega": [
-        "Olá! Pedimos desculpas pela demora na entrega. Por favor, aguarde mais 24-48 horas e, se o pedido não chegar, entre em contato com o suporte da Shopee.",
-        "Olá! Você verificou com seus vizinhos? Pode ser que alguém tenha recebido por engano.",
-    ],
-    "reembolso/cancelamento": [
-        "Olá! Não conseguimos efetuar o cancelamento, pois a Shopee só nos dá a opção de colocar o estoque como esgotado. Por favor, verifique com o suporte da Shopee para cancelar.",
-        "Olá! Infelizmente não podemos cancelar, pois seu pacote já está a caminho. Recuse o pacote no ato da entrega ou devolva para reembolso.",
-    ],
-    "extraviado ou veio com defeito": [
-        "Olá! O(A) senhor(a) verificou com seus vizinhos? Às vezes, os pedidos são entregues a vizinhos por engano.",
-        "Olá! Poderia nos enviar uma imagem do produto que recebeu e do pacote que ele veio? O pacote chegou avariado?",
-        "Olá! Provavelmente o pedido foi danificado ou perdido durante o trajeto. Fique tranquilo, o valor pago será reembolsado.",
-    ],
-    "outras_perguntas": [
-        "Desculpe, não entendi sua pergunta. Pode reformular ou fornecer mais detalhes?"
-    ],
-    "agradecimento": [
-        "Agradecemos pelo seu contato! Se precisar de mais ajuda, não hesite em nos chamar.",
-    ]
-}
+# Função para carregar respostas do arquivo JSON
+def carregar_respostas():
+    with open('respostas.json', 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+respostas = carregar_respostas()
 
 # Função para gerar a assinatura da API
 def gerar_assinatura(endpoint, timestamp):
@@ -93,39 +75,49 @@ def enviar_resposta(mensagem_id, resposta):
     except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao enviar resposta: {e}")
 
-# Função para gerar uma resposta baseada no conteúdo da mensagem
-def gerar_resposta(conteudo):
-    conteudo = conteudo.lower()
-    if re.search(r"status do pedido", conteudo):
-        return random.choice(respostas["status do pedido"])
-    elif re.search(r"demora|entrega", conteudo):
-        return random.choice(respostas["demora com a entrega"])
-    elif re.search(r"reembolso|cancelamento", conteudo):
-        return random.choice(respostas["reembolso/cancelamento"])
-    elif re.search(r"extraviado|defeito", conteudo):
-        return random.choice(respostas["extraviado ou veio com defeito"])
-    else:
-        return random.choice(respostas["outras_perguntas"])
-
 # Função do chatbot para responder automaticamente
 def responder_automaticamente():
     mensagens = buscar_mensagens()
     if "erro" not in mensagens:
         for mensagem in mensagens.get("data", []):
-            conteudo = mensagem.get("content", "")
+            conteudo = mensagem.get("content", "").lower()
             mensagem_id = mensagem.get("id")
 
-            # Gerar uma resposta baseada no conteúdo da mensagem
-            resposta = gerar_resposta(conteudo)
+            # Respostas com base em perguntas frequentes
+            if "status do meu pedido" in conteudo:
+                resposta = random.choice(respostas["status do pedido"])
+            elif "demora" in conteudo or "entrega" in conteudo:
+                resposta = random.choice(respostas["demora com a entrega"])
+            elif "cancelar meu pedido" in conteudo:
+                resposta = random.choice(respostas["reembolso/cancelamento"])
+            elif "chegou danificado" in conteudo or "defeito" in conteudo:
+                resposta = random.choice(respostas["extraviado ou veio com defeito"])
+            elif "solicitar reembolso" in conteudo:
+                resposta = random.choice(respostas["reembolso/cancelamento"])
+            elif "alterar o endereço de entrega" in conteudo:
+                resposta = random.choice(respostas["reembolso/cancelamento"])
+            elif "troca e devolução" in conteudo:
+                resposta = random.choice(respostas["reembolso/cancelamento"])
+            elif "pedido extraviado" in conteudo:
+                resposta = random.choice(respostas["extraviado ou veio com defeito"])
+            elif "acompanhar meu pedido" in conteudo:
+                resposta = random.choice(respostas["status do pedido"])
+            elif "promoções" in conteudo or "cupons" in conteudo:
+                resposta = random.choice(respostas["promoções e cupons"])
+            else:
+                resposta = random.choice(respostas["outras_perguntas"])
 
-            # Enviar a resposta de volta
+            # Enviar a resposta ao cliente
             enviar_resposta(mensagem_id, resposta)
-
-            # Enviar mensagem de agradecimento
-            enviar_resposta(mensagem_id, random.choice(respostas["agradecimento"]))
+            # Enviar um agradecimento, se aplicável
+            if "reembolso" not in conteudo:  # Evitar repetir agradecimento em situações de reembolso
+                enviar_resposta(mensagem_id, random.choice(respostas["agradecimento"]))
 
 # Executar o chatbot em um loop
 if __name__ == "__main__":
-    while True:
-        responder_automaticamente()
-        time.sleep(60)  # Aguarda 60 segundos antes de buscar novas mensagens
+    try:
+        while True:
+            responder_automaticamente()
+            time.sleep(60)  # Aguarda 60 segundos antes de buscar novas mensagens
+    except KeyboardInterrupt:
+        logging.info("Encerrando o chatbot...")

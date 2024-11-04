@@ -1,0 +1,31 @@
+{
+    "status do pedido": [
+        "Seu pedido está em processamento.",
+        "Seu pedido foi enviado e está a caminho.",
+        "O status do seu pedido pode ser verificado na sua conta."
+    ],
+    "demora com a entrega": [
+        "Desculpe pela demora! Verificamos que seu pedido pode estar em atraso.",
+        "Aguarde mais alguns dias, estamos monitorando a entrega."
+    ],
+    "reembolso/cancelamento": [
+        "O cancelamento não é possível neste momento, mas você pode devolver o produto.",
+        "Para solicitar um reembolso, entre em contato com o suporte."
+    ],
+    "extraviado ou veio com defeito": [
+        "Por favor, verifique se o pacote chegou danificado.",
+        "Caso tenha recebido um produto errado, entre em contato conosco."
+    ],
+    "promoções e cupons": [
+        "Verifique nosso site para as últimas promoções e cupons disponíveis.",
+        "Não deixe de conferir a seção de ofertas especiais!"
+    ],
+    "outras_perguntas": [
+        "Desculpe, não entendi sua pergunta. Pode reformular?",
+        "Por favor, forneça mais detalhes sobre sua dúvida."
+    ],
+    "agradecimento": [
+        "Agradecemos pelo seu contato!",
+        "Obrigado por nos contatar, estamos aqui para ajudar!"
+    ]
+}
