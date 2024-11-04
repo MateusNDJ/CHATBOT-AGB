@@ -78,6 +78,29 @@ def enviar_resposta(mensagem_id, resposta):
     except requests.exceptions.RequestException as e:
         logging.error(f"Erro ao enviar resposta: {e}")
 
+# Função para buscar respostas de produtos usando DuckDuckGo
+def buscar_resposta_produto(pergunta):
+    url = "https://api.duckduckgo.com/"
+    params = {
+        'q': pergunta,
+        'format': 'json',
+        'no_redirect': 1,
+        'no_html': 1,
+        'skip_disambiguation': 1
+    }
+    
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        data = response.json()
+        
+        if 'RelatedTopics' in data and data['RelatedTopics']:
+            return data['RelatedTopics'][0]['Text']  # Retorna a primeira resposta
+        return "Desculpe, não consegui encontrar uma resposta para isso."
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Erro ao buscar resposta de produto: {e}")
+        return "Desculpe, ocorreu um erro ao buscar informações sobre o produto."
+
 # Função para determinar a resposta apropriada
 def determinar_resposta(conteudo):
     conteudo = conteudo.lower()
@@ -94,7 +117,8 @@ def determinar_resposta(conteudo):
     elif "promoções" in conteudo or "cupons" in conteudo:
         return random.choice(respostas.get("promoções e cupons", []))
     else:
-        return random.choice(respostas.get("outras_perguntas", []))
+        # Tenta buscar uma resposta sobre o produto
+        return buscar_resposta_produto(conteudo)
 
 # Função do chatbot para responder automaticamente
 def responder_automaticamente():

@@ -20,8 +20,18 @@ Este é um chatbot automatizado desenvolvido para facilitar o atendimento ao cli
 - **OS**: Para gerenciar variáveis de ambiente.
 - **Logging**: Para registrar informações e erros em um log.
 
-## Configuração
 
+## Dependências
+
+Para executar este projeto, você precisa das seguintes bibliotecas Python:
+
+- `requests`: Para fazer chamadas HTTP à API da Shopee e à API do DuckDuckGo.
+- `python-dotenv`: Para carregar variáveis de ambiente de um arquivo `.env`.
+
+Você pode instalar essas dependências usando o pip:
+
+```bash
+pip install requests python-dotenv
 ### Pré-requisitos
 
 Certifique-se de ter o Python 3.x instalado em sua máquina. Você também precisará das seguintes bibliotecas, que podem ser instaladas via pip:
